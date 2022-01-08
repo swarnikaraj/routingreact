@@ -7,22 +7,24 @@ export const Productdetails=()=>{
   const [item,setItem]=useState(null)
 
    const getdetail=()=>{
-    fetch(`http://localhost:3001/products/${id}`).then(d=>d.json()).then(res=>{setItem(res)})
-     
-    .catch((e)=>{
-          console.log(e)
-    });
+    
 
     
     }
  
    
     useEffect(() => {
-        getdetail()
-       console.log(item)
-    }, [])
+        fetch(`http://localhost:3001/products/${id}`).then(d=>d.json()).then(res=>{setItem(res)})
+     
+        .catch((e)=>{
+          console.log(e)
+          });
+      
+    }, [id])
     return <div>
         users {id}
+        {item.name}
+        {item.price}
               
     </div>
 }
