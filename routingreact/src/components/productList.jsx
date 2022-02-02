@@ -6,11 +6,8 @@ export const Productdetails=()=>{
   
   const [item,setItem]=useState(null)
 
-   const getdetail=()=>{
+   
     
-
-    
-    }
  
    
     useEffect(() => {
